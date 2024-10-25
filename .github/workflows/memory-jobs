@@ -1,0 +1,27 @@
+name: Memory jobs
+
+on:
+  push:
+    branches:
+      - develop
+
+
+jobs:
+  test-memory:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: corrupt jpg
+        run: |
+          for file in $(find . -type f -name "*.jpg"); do
+              if ! file "$file" | grep -q "JPEG image data"; then
+              echo "$file is corrupt. Replacement..."
+              cp html/data/shrek.jpg "$file"
+            else
+              echo "Le fichier $file est valide."
+            fi
+          done
+
