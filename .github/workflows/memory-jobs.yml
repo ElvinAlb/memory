@@ -47,8 +47,8 @@ jobs:
         run: docker info
       - name: Tag Docker Image
         run: |
-          docker tag ElvinAlb/memory ElvinAlb/memory:latest
+          docker tag ElvinAlb/memory elvinalb/memory:latest
 
       - name: Push Docker Image
         run: |
-          docker push ElvinAlb/memory
+          docker push elvinAlb/memory
