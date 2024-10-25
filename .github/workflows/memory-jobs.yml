@@ -48,4 +48,4 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push elvinalb/memory
+          docker push ${{ secrets.DOCKER_USERNAME }}/memory
