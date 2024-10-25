@@ -51,4 +51,4 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push elvinAlb/memory
+          docker push elvinalb/memory
