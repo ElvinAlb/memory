@@ -1,6 +1,6 @@
-FROM nginx:latest
+FROM nginx:alpine
 
-RUN apt-get update && \ apt-get install -y file
+RUN apk update && apk add file
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
